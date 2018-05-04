@@ -191,7 +191,7 @@ new CronJob('0 */30 * * * *', function() { // Every 30 min
                     ]
                   })
                 };
-                if (msgID != "") {
+                if (msgIDProfit != "") {
                   bot.deleteMessage(chatIdImon, msgIDProfit);
                 }
                 bot.sendMessage(chatIdImon, "✔️СТАТИСТИКА С PS:", options).then(sender => {

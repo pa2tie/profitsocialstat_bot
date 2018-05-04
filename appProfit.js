@@ -368,7 +368,7 @@ function uploadZoho(day, month, year, fileName, callback1) {
   var form = new FormData();
 
   form.append('content', fs.createReadStream(fileName), {
-    filename: `profit_stats_for_${year}-${month}-${day}.xls`,
+    filename: `profit_stats_for_${year}-${month}-${day}.csv`,
     contentType: 'application/vnd.ms-excel'
   });
 
@@ -383,7 +383,7 @@ function uploadZoho(day, month, year, fileName, callback1) {
     callback1(false, result.data);
   })
   .catch(error => {
-    console.error('Upload failed:');
+    console.error('Upload failed: ' + error);
     callback1(true, "");
   });
 
